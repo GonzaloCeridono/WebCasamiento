@@ -1,0 +1,121 @@
+.formulario-musica {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    padding: 2rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-blanco);
+    background-color: var(--color-verde);
+    border: 1px solid #e8d7d0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.formulario-musica h2 {
+    color: var(--color-blanco);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--color-celeste);
+    padding-bottom: 0.5rem;
+}
+
+.formulario-musica label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.formulario-musica input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e8d7d0;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    min-height: 44px;
+}
+
+.formulario-musica input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-celeste);
+    box-shadow: 0 0 0 3px rgba(136, 172, 240, 0.4);
+}
+
+.formulario-musica .btn-submit {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--color-celeste);
+    color: var(--color-negro);
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    min-height: 48px;
+    transition: all 0.2s ease-in-out;
+}
+
+.formulario-musica .btn-submit:hover {
+    background-color: #88acf0;
+    transform: translateY(-1px);
+    color: var(--color-blanco);
+}
+
+.formulario-musica .btn-submit:active {
+    transform: translateY(0);
+}
+
+.estado-envio {
+    font-size: 0.9rem;
+    color: var(--color-blanco);
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .formulario-musica {
+        padding: 1.5rem;
+    }
+
+    .formulario-musica h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario-musica {
+        padding: 1rem;
+    }
+
+    .formulario-musica h2 {
+        font-size: 1.3rem;
+    }
+
+    .formulario-musica label {
+        font-size: 0.9rem;
+    }
+
+    .formulario-musica input {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+
+    .formulario-musica .btn-submit {
+        font-size: 0.9rem;
+        padding: 0.65rem 1.2rem;
+    }
+}

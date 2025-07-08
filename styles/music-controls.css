@@ -1,0 +1,190 @@
+:root {
+    --color-primario: var(--color-celeste);
+    --color-panel: rgba(255, 255, 255, 0.95);
+    --color-borde: rgba(0, 0, 0, 0.1);
+    --color-hover: #2e4d34;
+    --color-texto: #121212;
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+.floating-controls {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 999;
+}
+
+.control-group {
+    position: relative;
+}
+
+/* Botón flotante */
+.floating-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-celeste);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.floating-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.floating-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Ícono SVG del botón */
+.floating-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Panel flotante */
+.floating-panel {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    min-width: 260px;
+    background: var(--color-panel);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid var(--color-borde);
+    backdrop-filter: blur(8px);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.floating-panel.visible {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Cabecera del panel */
+.panel-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-texto);
+    margin-bottom: 8px;
+}
+
+/* Controles de música */
+.player-display {
+    text-align: center;
+}
+
+.track-info {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+.track-artist {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    color: var(--color-texto);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.control-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.control-btn img {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-texto);
+}
+
+.control-btn:hover {
+    background: var(--color-primario);
+    color: var(--color-icono);
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primario);
+    color: var(--color-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.icon-btn,
+.volume-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    color: var(--color-texto);
+}
+
+/* Range sliders */
+.range-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    appearance: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primario);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.range-slider:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+}

@@ -1,0 +1,242 @@
+/* Contenedor que ocupa el 100% del ancho y centra contenido */
+.portada {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-blanco, #ffffff);
+  background-image: url(../assets/img/fondo.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+/* Imagen horizontal por defecto */
+.portada-horizontal {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Imagen vertical (mobile) oculta por defecto */
+.portada-vertical {
+  display: none;
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+}
+
+/* COUNTDOWN */
+.countdown {
+  font-family: 'Joliet', sans-serif;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #456344;
+}
+
+#fechaBoda {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Joliet', sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+  color: #456344;
+  white-space: nowrap;
+}
+
+.seccion-titulo {
+  font-family: 'Breathing', sans-serif;
+  font-size: 4rem;
+  color: #456344;
+  font-weight: normal;
+  text-align: center;
+  margin: 4rem auto 8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #456344;
+  width: fit-content;
+}
+
+#cuenta-regresiva {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 240px;
+}
+
+.bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.numero {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.texto {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+.separador {
+  font-size: 3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #456344;
+  transform: translateY(-1.5rem);
+}
+
+/* ✅ Animación */
+@keyframes cambiar-numero {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animar-cambio {
+  animation: cambiar-numero 0.3s ease-in-out;
+}
+
+/* ───── MEDIA QUERIES ───── */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .portada h2 {
+    font-size: 6rem;
+  }
+
+  .seccion-titulo {
+    font-size: 3rem;
+  }
+
+  .numero {
+    font-size: 3.5rem;
+  }
+
+  .separador {
+    font-size: 2.5rem;
+  }
+}
+
+/* Celulares grandes (768px para abajo) */
+@media (max-width: 768px) {
+  .portada {
+    padding: 3rem 1rem;
+  }
+
+  .portada-horizontal {
+    display: none;
+  }
+
+  .portada-vertical {
+    display: block;
+  }
+
+  .seccion-titulo {
+    font-size: 3rem;
+  }
+
+  .numero {
+    font-size: 3rem;
+  }
+
+  .separador {
+    font-size: 2rem;
+  }
+
+  .texto {
+    font-size: 0.9rem;
+  }
+
+  #fechaBoda {
+    font-size: 3rem;
+    font-weight: 900;
+    flex-wrap: nowrap;
+  }
+}
+
+/* Celulares medianos a chicos (480px o menos) */
+@media (max-width: 480px) {
+  #faltan {
+    font-size: 2rem;
+  }
+
+  .numero {
+    font-size: 2rem;
+  }
+
+  .separador {
+    font-size: 1.8rem;
+    transform: translateY(-1.1rem);
+  }
+
+  .texto {
+    font-size: 0.8rem;
+  }
+
+  #cuenta-regresiva {
+    flex-wrap: nowrap;
+    gap: .2rem;
+    justify-content: space-between;
+  }
+
+  #fechaBoda {
+    font-size: 2rem;
+    font-weight: 900;
+    flex-wrap: nowrap;
+  }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 400px) {
+  .seccion-titulo {
+    font-size: 2rem;
+  }
+
+  .numero {
+    font-size: 1.5rem;
+  }
+
+  #cuenta-regresiva {
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    justify-content: space-between;
+  }
+
+  .bloque {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .separador {
+    font-size: 1.5rem;
+    transform: translateY(-1rem);
+  }
+
+  .texto {
+    font-size: 0.8rem;
+  }
+
+  #fechaBoda {
+    font-size: 1.4rem;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+}

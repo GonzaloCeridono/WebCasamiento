@@ -1,0 +1,121 @@
+.footer-elegante {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    background-color: var(--color-verde);
+    padding: 40px 15px 30px;
+}
+
+.footer-elegante > p {
+    font-family: 'Breathing', sans-serif;
+    color: var(--color-blanco);
+    text-align: center;
+    font-size: 4rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.pareja-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-profile {
+    text-align: center;
+}
+
+.social-profile p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-blanco);
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: var(--color-blanco);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    outline: none;
+}
+
+.instagram-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-blanco);
+    transition: fill 0.3s ease;
+}
+
+.instagram-link:hover,
+.instagram-link:focus {
+    color: var(--color-celeste);
+    transform: translateY(-2px);
+}
+
+.instagram-link:hover .instagram-icon,
+.instagram-link:focus .instagram-icon {
+    fill: var(--color-celeste);
+}
+
+.creditos {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.creditos p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-blanco);
+}
+
+.creditos a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.creditos a:hover,
+.creditos a:focus {
+    color: var(--color-celeste);
+    border-bottom-style: solid;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-elegante {
+        padding: 40px 15px 30px;
+    }
+
+    .footer-elegante > p {
+        font-size: 3rem;
+    }
+
+    .pareja-social {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-elegante > p {
+        font-size: 2.5rem;
+    }
+}

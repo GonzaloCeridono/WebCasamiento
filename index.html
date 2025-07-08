@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Acompañanos a celebrar la boda de Ani y Fede. Todos los detalles, confirmación de asistencia y más aquí.">
+    <title>Boda de Ani y Fede | 13/09 </title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles/portada.css">
+    <link rel="stylesheet" href="styles/galeria.css">
+    <link rel="stylesheet" href="styles/galeriaCierre.css">
+    <link rel="stylesheet" href="styles/detalles.css">
+    <link rel="stylesheet" href="styles/dresscode.css">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <link rel="stylesheet" href="styles/reproductor.css">
+    <link rel="stylesheet" href="styles/donacion.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/music-controls.css">
+    <link rel="stylesheet" href="styles/inicio.css">
+    <link rel="stylesheet" href="styles/formMusica.css">
+    <link rel="stylesheet" href="styles/driveFotos.css">
+    <link rel="stylesheet" href="styles/popup.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Pantalla de inicio -->
+<div id="pantalla-ingreso" class="pantalla-ingreso">
+  <!-- Imagen horizontal (por defecto) -->
+  <img src="assets/img/imgInicio.webp" alt="Bienvenida" class="imagen-portada">
+  
+  <!-- Imagen vertical (solo visible en mobile) -->
+  <img src="assets/img/portada3.webp" alt="Bienvenida mobile" class="imagen-portada-vertical">
+
+  <button id="btnIngresar">INGRESAR</button>
+</div>
+
+<h1 class="sr-only">Ani y Fede - Invitación de Boda</h1>
+<div class="invitacion" id="contenido-principal" style="display: none;"></div>
+
+    <!-- Portada -->
+<section class="portada" id="portada">
+  <img src="assets/img/portadaHorizontal.webp" alt="Invitación Boda" class="portada-horizontal">
+  <img src="assets/img/portadaVertical.webp" alt="Invitación Boda" class="portada-vertical">
+</section>
+
+<!-- Cuenta regresiva -->
+<section class="countdown">
+  <div id="fechaBoda">SABADO 13 DE SEPTIEMBRE 2025</div>
+  <h2 class="seccion-titulo">faltan</h2>
+  <div id="cuenta-regresiva">
+    <div class="bloque">
+      <div id="dias" class="numero">00</div>
+      <div class="texto">DÍAS</div>
+    </div>
+    <div class="separador">:</div>
+    <div class="bloque">
+      <div id="horas" class="numero">00</div>
+      <div class="texto">HORAS</div>
+    </div>
+    <div class="separador">:</div>
+    <div class="bloque">
+      <div id="minutos" class="numero">00</div>
+      <div class="texto">MINUTOS</div>
+    </div>
+    <div class="separador">:</div>
+    <div class="bloque">
+      <div id="segundos" class="numero">00</div>
+      <div class="texto">SEGUNDOS</div>
+    </div>
+  </div>
+  <div id="mensaje" style="display: none; margin-top: 1rem; font-size: 1.2rem;"></div>
+</section>
+
+
+<!-- Galería -->
+<section class="galeria" id="galeria">
+    <h2>nosotros</h2>
+    <div class="grid-fotos">
+        <img src="assets/img/1.webp" alt="Foto 1" onclick="abrirLightbox(0, this)" loading="lazy">
+        <img src="assets/img/2.webp" alt="Foto 2" onclick="abrirLightbox(1, this)" loading="lazy">
+        <img src="assets/img/3.webp" alt="Foto 3" onclick="abrirLightbox(2, this)" loading="lazy">
+        <img src="assets/img/4.webp" alt="Foto 4" onclick="abrirLightbox(3, this)" loading="lazy">
+        <img src="assets/img/5.webp" alt="Foto 5" onclick="abrirLightbox(4, this)" loading="lazy">
+        <img src="assets/img/6.webp" alt="Foto 6" onclick="abrirLightbox(5, this)" loading="lazy">
+    </div>
+</section>
+
+<!-- Lightbox (modal) -->
+<div id="lightbox" class="lightbox">
+    <span class="cerrar" onclick="cerrarLightbox()">&times;</span>
+    <span class="anterior" onclick="cambiarImagen(-1)">&#10094;</span>
+    <span class="siguiente" onclick="cambiarImagen(1)">&#10095;</span>
+    <div class="lightbox-content">
+        <img id="imagen-ampliada" class="imagen-lightbox">
+        <!-- Movemos el contador FUERA de la imagen -->
+        <div class="contador">1 / 9</div>
+    </div>
+</div>
+
+<!-- Detalles -->
+<section class="detalles" id="detalles">
+  <header>
+    <h2>detalles del evento</h2>
+  </header>
+  <section class="detalles-info">
+    <!-- Sub-secciones con íconos -->
+    <div class="detalles-sub">
+      <article class="detalle-item">
+        <figure class="icono">
+          <img src="assets/icons/toast_no_background.gif" alt="Icono de recepción" loading="lazy"/>
+        </figure>
+        <section class="contenido">
+          <h3>RECEPCIÓN</h3>
+          <p>13.15 HS</p>
+        </section>
+      </article>
+
+      <article class="detalle-item">
+        <figure class="icono">
+          <img src="assets/icons/rings.gif" alt="Icono de ceremonia" loading="lazy"/>
+        </figure>
+        <section class="contenido">
+          <h3>CEREMONIA CIVIL</h3>
+          <p>14.00 HS</p>
+        </section>
+      </article>
+
+      <article class="detalle-item">
+        <figure class="icono">
+          <img src="assets/icons/dinner.gif" alt="Icono de comida" loading="lazy"/>
+        </figure>
+        <section class="contenido">
+          <h3>LUNCH</h3>
+          <p>14.30 HS</p>
+        </section>
+      </article>
+
+      <article class="detalle-item">
+        <figure class="icono">
+          <img src="assets/icons/party.gif" alt="Icono de fiesta" loading="lazy"/>
+        </figure>
+        <section class="contenido">
+          <h3>FIESTA</h3>
+          <p>16.00 HS</p>
+        </section>
+      </article>
+
+      <article class="detalle-item ubicacion">
+  <figure class="icono">
+    <img src="assets/icons/map.gif" alt="Icono de ubicación" loading="lazy"/>
+  </figure>
+  <section class="contenido">
+    <h3>UBICACIÓN</h3>
+    <p>Salón La Arboleda, San Pablo, Tucumán</p>
+    <a href="https://maps.app.goo.gl/YMJUSAeQjCnbLjs56" target="_blank" class="boton-mapa">
+      Ver en mapa →
+    </a>
+  </section>
+</article>
+
+      <article class="detalle-item">
+        <figure class="icono">
+          <img src="assets/icons/tuxedo.gif" alt="Icono de vestimenta" loading="lazy"/>
+        </figure>
+        <section class="contenido">
+          <h3>DRESS CODE</h3>
+          <p>FORMAL ELEGANTE</p>
+          <p id="detalle-vestimenta">Pedimos por favor evitar el color blanco</p>
+        </section>
+      </article>
+    </div>
+  </section>
+</section>
+
+<!-- Formulario -->
+<section class="formulario" id="asistencia">
+  <form id="asistenciaForm">
+    <h2>Confirmación de Asistencia</h2>
+    <p class="info-msg">Por favor recordá que el casamiento es solo para adultos. Gracias por tu comprensión.</p>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" required />
+
+    <label for="apellido">Apellido</label>
+    <input type="text" name="apellido" required />
+
+    <label for="restriccion">¿Tienes una restricción alimentaria?</label>
+    <select name="restriccion" id="restriccion" required>
+      <option value="No">No</option>
+      <option value="Sí">Sí</option>
+    </select>
+
+    <div id="tipoRestriccionContainer" class="hidden">
+      <label for="tipoRestriccion">Tipo de restricción</label>
+      <select name="tipoRestriccion" id="tipoRestriccion">
+        <option value="">Seleccionar</option>
+        <option value="Alergia">Alergia alimenticia</option>
+        <option value="Celíaco">Celíaco</option>
+        <option value="Diabetes">Diabetes</option>
+         <option value="Vegano">Vegano</option>
+         <option value="Vegetariano">Vegetariano</option>
+      </select>
+    </div>
+
+    <div id="detalleAlergiaContainer" class="hidden">
+      <label for="detalleAlergia">Por favor indica a qué eres alérgico/a</label>
+      <input type="text" name="detalleAlergia" id="detalleAlergia" placeholder="Ej: Maní, gluten, etc." />
+    </div>
+
+    <label>Si fuiste invitado/a con acompañante, por favor completar los datos del mismo haciendo click en el siguiente botón:</label>
+    <button type="button" class="btn-small btn-add" onclick="mostrarSeccionAcompanantes()">Agregar acompañante</button>
+
+    <div id="acompanantesContainer" class="hidden">
+      <div id="acompanantes" class="acompanantes"></div>
+    </div>
+
+    <button type="submit" class="btn-submit">Enviar</button>
+    <p class="info-msg">Si necesitas modificar algún dato de tu respuesta, por favor contactarse con los novios.</p>
+    <p class="info-msg" style="text-transform: uppercase; font-style: normal;">Se aceptaran respuestas hasta el 22 de Agosto. <br> Por favor confirmar antes de dicha fecha.</p>
+  </form>
+</section>
+
+<!-- RECOMENDAR MUSICA -->
+<section class="formulario-musica" id="musica">
+  <h2>¡Recomendá tu canción!</h2>
+  <form id="formMusica">
+    <input type="text" name="cancion" required />
+    <button type="submit" class="btn-submit">Enviar</button>
+    <p id="musicaEstado" class="estado-envio"></p>
+  </form>
+</section>
+
+<!-- DONACION -->
+<section class="donacion" id="donacion">
+  <h2>regalos</h2>
+  <p class="donacion-subtitulo">El mejor regalo que podes hacernos es tu presencia, pero si queres contribuir con nuestra luna de miel podes hacerlo de estas formas:</p>
+  <button id="abrirDonacion" class="donacion-btn">Ver opciones de regalo</button>
+
+  <!-- Modal -->
+  <div id="popupDonacion" class="modal">
+    <div class="modal-content">
+      <span class="cerrar2">&times;</span>
+      <p class="donacion-subtitulo">En el salón vas a encontrar un buzón para dejar tu regalo en efectivo. <br>Sino, podes realizar una transferencia a estas cuentas:</p>
+      <ul class="donacion-opciones">
+        <li><strong>Cuenta en pesos</strong><br>CBU: 1234567890123456789012<br>Alias: miCuentaPesos<br>Banco: Banco Ejemplo</li>
+        <li><strong>Cuenta en dolares</strong><br>CBU: 1234567890123456789012<br>Alias: miCuentaDolares<br>Banco: Banco Ejemplo</li>
+      </ul>
+      <img class="donacion-gracias" src="assets/icons/gift.gif" alt="Gracias" loading="lazy">
+      <p class="donacion-subtitulo2">¡muchas gracias!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Fotos Cierre -->
+ <section class="galeriaCierre" id="galeriaCierre">
+    <h2 id="galeriaCierreTitulo">Queremos que seas parte de nuestra historia</h2>
+    <h2 id="galeriaCierreSubtitulo">¡te esperamos!</h2>
+    <div class="grid-fotosCierre">
+        <img src="assets/img/7.webp" alt="Foto 7">
+        <img src="assets/img/8.webp" alt="Foto 8">
+        <img src="assets/img/9.webp" alt="Foto 9">
+    </div>
+</section>
+
+<!-- Drive para fotos -->
+<section class="driveFotos" id="driveFotos">
+  <h2 id="driveFotosTitulo">compartí tus fotos</h2>
+  <p class="drive-text">
+    Creamos un álbum para que puedas compartir todas tus fotos de ese día.
+    Podés subirlas en el Drive que te dejamos aquí:
+  </p>
+  <a href="link" target="_blank" rel="noopener noreferrer" class="btn-drive">Abrir Drive</a>
+</section>
+
+<!-- FOOTER -->
+ <footer class="footer-elegante">
+    <p>seguinos</p>
+    <div class="footer-content">
+        <div class="pareja-social">
+            <div class="social-profile">
+                <p>Ani</p>
+                <a href="https://www.instagram.com/anahiferreyra/" target="_blank" class="instagram-link">
+                    <svg class="instagram-icon" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    @anahiferreyra
+                </a>
+            </div>
+            
+            <div class="social-profile">
+                <p>Fede</p>
+                <a href="https://www.instagram.com/fede.ceridono/" target="_blank" class="instagram-link">
+                    <svg class="instagram-icon" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    @fede.ceridono
+                </a>
+            </div>
+        </div>
+        <div class="creditos">
+            <p>Diseñado por <a href="https://www.instagram.com/gonzaceridono/" target="_blank">Gonzalo Ceridono</a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Controles flotantes -->
+<div class="floating-controls">
+    <!-- Botón de música -->
+    <div class="control-group">
+        <button id="musicBtn" class="floating-btn" aria-label="Reproductor de música">
+            <img src="assets/icons/music.svg" alt="Reproductor de música">
+        </button>
+        <div id="musicControls" class="floating-panel">
+            <div class="panel-header"></div>
+            <div class="player-display">
+                <div id="nowPlaying" class="track-info">Selecciona una canción</div>
+                <div class="track-artist" id="songArtist"></div>
+            </div>
+            <div class="player-controls">
+                <div class="progress-container">
+                    <span id="currentTime" class="time-display">0:00</span>
+                    <input type="range" id="progressBar" class="range-slider" min="0" max="100" value="0" aria-label="Progreso">
+                    <span id="duration" class="time-display">0:00</span>
+                </div>
+                <div class="controls-row">
+                    <button id="prevBtn" class="control-btn" aria-label="Anterior">
+                        <img src="assets/icons/prev.svg" alt="Anterior canción">
+                    </button>
+                    <button id="playPauseBtn" class="control-btn play-btn" aria-label="Play/Pause">
+                        <img id="playIcon" src="assets/icons/play.svg" alt="Reproducir">
+                        <img id="pauseIcon" src="assets/icons/pause.svg" alt="Pausar" style="display: none;">
+                    </button>
+                    <button id="nextBtn" class="control-btn" aria-label="Siguiente">
+                        <img src="assets/icons/next.svg" alt="Siguiente canción">
+                    </button>
+                </div>
+                <div class="volume-control">
+                    <svg viewBox="0 0 24 24" class="volume-icon"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.05" class="range-slider" aria-label="Volumen">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reproductor de audio -->
+<audio id="audioPlayer" hidden></audio>
+
+<!-- Popup de mensaje -->
+<div id="popupMensaje" class="popup hidden">
+  <div class="popup-contenido">
+    <p id="popupTexto"></p>
+    <button onclick="cerrarPopup()" class="btn-popup">Cerrar</button>
+  </div>
+</div>
+
+    <!-- Scripts -->
+    <script src="scripts/countdown.js" defer></script>
+    <script src="scripts/reproductor.js" defer></script>
+    <script src="scripts/formulario.js" defer></script>
+    <script src="scripts/galeria.js" defer></script>
+    <script src="scripts/inicio.js" defer></script>
+    <script src="scripts/popupRegalos.js" defer></script>
+</body>
+</html>
