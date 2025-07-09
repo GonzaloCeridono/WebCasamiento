@@ -29,7 +29,7 @@
 /* Botón abrir */
 .donacion-btn {
   width: 100%;
-  max-width: 400px;
+  max-width: 200px;
   margin-top: 1rem;
   background-color: var(--color-celeste);
   color: var(--color-negro);

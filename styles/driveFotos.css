@@ -14,32 +14,36 @@
   margin-bottom: 2rem;
 }
 
-.btn-drive {
-  display: inline-flex; /* mejora el centrado */
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1.2rem; /* más pequeño */
+#btn-drive {
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 1rem;
   background-color: var(--color-celeste);
   color: var(--color-negro);
-  font-size: 0.9rem; /* más chico */
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-family: 'Raleway', sans-serif;
+  font: inherit;
+  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 4px;
-  text-decoration: none;
+  font-weight: 500;
+  min-height: 48px;
   transition: all 0.2s ease-in-out;
-  min-height: 40px;
-  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
 }
 
-.btn-drive:hover {
+#btn-drive:hover {
   background-color: #88acf0;
-  color: var(--color-blanco);
   transform: translateY(-1px);
+  color: var(--color-blanco);
 }
 
-.btn-drive:active {
+#btn-drive:active {
   transform: translateY(0);
 }
 
@@ -62,11 +66,6 @@
   .driveFotos .drive-text {
     font-size: 1rem;
   }
-
-  .btn-drive {
-    padding: 0.4rem 1rem;
-    font-size: 0.8rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -79,8 +78,7 @@
     font-size: 0.9rem;
   }
 
-  .btn-drive {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.7rem;
+  #btn-drive {
+    font-size: 0.9rem;
   }
 }
