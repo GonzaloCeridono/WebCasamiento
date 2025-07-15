@@ -1,25 +1,28 @@
-/* Splash screen */
+/* ======================== */
+/*      SPLASH SCREEN       */
+/* ======================== */
+
 .pantalla-ingreso {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
   width: 100vw;
-  height: 100dvh; /* ✅ Alto real visible del dispositivo */
+  height: 100dvh; /* altura real del viewport en móviles */
   background-image: url('../assets/img/fondo.png');
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
+  gap: 2rem;
+  padding: 1rem;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-
-/* Imagen principal horizontal */
+/* Imagen horizontal por defecto (escritorio) */
 .imagen-portada {
   width: 100%;
   max-width: 1400px;
@@ -27,9 +30,10 @@
   object-fit: contain;
   flex-grow: 1;
   margin-top: 2rem;
+  display: block;
 }
 
-/* Imagen vertical (oculta por defecto) */
+/* Imagen vertical oculta por defecto (solo para mobile) */
 .imagen-portada-vertical {
   display: none;
   width: 100%;
@@ -39,35 +43,38 @@
   margin-top: 2rem;
 }
 
-/* Botón */
+/* Botón de ingreso */
 #btnIngresar {
-    width: fit-content;
-    background-color: var(--color-celeste);
-    color: var(--color-negro);
-    border: none;
-    border-radius: 4px;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
-    font-family: 'Raleway', sans-serif;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
-    min-height: 48px;
-    transition: all 0.2s ease-in-out;
+  width: fit-content;
+  background-color: var(--color-celeste);
+  color: var(--color-negro);
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  min-height: 48px;
+  transition: all 0.2s ease-in-out;
 }
 
 #btnIngresar:hover {
   background-color: #88acf0;
-    transform: translateY(-1px);
-    color: var(--color-blanco);
+  transform: translateY(-1px);
+  color: var(--color-blanco);
 }
 
-#btnIngresar:active{
+#btnIngresar:active {
   transform: translateY(0);
 }
 
-/* Responsive: mostrar imagen vertical */
+/* ======================== */
+/*        RESPONSIVE        */
+/* ======================== */
+
 @media (max-width: 768px) {
   .imagen-portada {
     display: none;
