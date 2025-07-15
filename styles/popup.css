@@ -46,7 +46,7 @@
 }
 
 .btn-popup:hover {
-  background-color: var(--color-celeste);
+  background-color: #ca4545;
   color: var(--color-blanco);
 }
 

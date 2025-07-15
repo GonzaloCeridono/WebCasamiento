@@ -192,42 +192,63 @@
 <section class="formulario" id="asistencia">
   <form id="asistenciaForm">
     <h2>Confirmación de Asistencia</h2>
-    <p class="info-msg">Por favor recordá que el casamiento es solo para adultos. Gracias por tu comprensión.</p>
 
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" required />
-
-    <label for="apellido">Apellido</label>
-    <input type="text" name="apellido" required />
-
-    <label for="restriccion">¿Tienes una restricción alimentaria?</label>
-    <select name="restriccion" id="restriccion" required>
-      <option value="No">No</option>
+    <!-- Nueva pregunta -->
+    <label for="asistiras">¿Vas a asistir?</label>
+    <select id="asistiras" name="asistiras" required>
+      <option value="">Seleccionar</option>
       <option value="Sí">Sí</option>
+      <option value="No">No</option>
     </select>
 
-    <div id="tipoRestriccionContainer" class="hidden">
-      <label for="tipoRestriccion">Tipo de restricción</label>
-      <select name="tipoRestriccion" id="tipoRestriccion">
-        <option value="">Seleccionar</option>
-        <option value="Alergia">Alergia alimenticia</option>
-        <option value="Celíaco">Celíaco</option>
-        <option value="Diabetes">Diabetes</option>
-         <option value="Vegano">Vegano</option>
-         <option value="Vegetariano">Vegetariano</option>
+    <!-- Formulario completo (solo si selecciona "Sí") -->
+    <div id="formAsistenciaCompleta" class="hidden">
+      <p class="info-msg">Por favor recordá que el casamiento es solo para adultos. Gracias por tu comprensión.</p>
+
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" required />
+
+      <label for="apellido">Apellido</label>
+      <input type="text" name="apellido" required />
+
+      <label for="restriccion">¿Tienes una restricción alimentaria?</label>
+      <select name="restriccion" id="restriccion" required>
+        <option value="No">No</option>
+        <option value="Sí">Sí</option>
       </select>
+
+      <div id="tipoRestriccionContainer" class="hidden">
+        <label for="tipoRestriccion">Tipo de restricción</label>
+        <select name="tipoRestriccion" id="tipoRestriccion">
+          <option value="">Seleccionar</option>
+          <option value="Alergia">Alergia alimenticia</option>
+          <option value="Celíaco">Celíaco</option>
+          <option value="Diabetes">Diabetes</option>
+          <option value="Vegano">Vegano</option>
+          <option value="Vegetariano">Vegetariano</option>
+        </select>
+      </div>
+
+      <div id="detalleAlergiaContainer" class="hidden">
+        <label for="detalleAlergia">Por favor indica a qué eres alérgico/a</label>
+        <input type="text" name="detalleAlergia" id="detalleAlergia" placeholder="Ej: Maní, gluten, etc." />
+      </div>
+
+      <label>Si fuiste invitado/a con acompañante, por favor completar los datos del mismo haciendo click en el siguiente botón:</label>
+      <button type="button" class="btn-small btn-add" onclick="mostrarSeccionAcompanantes()">Agregar acompañante</button>
+
+      <div id="acompanantesContainer" class="hidden">
+        <div id="acompanantes" class="acompanantes"></div>
+      </div>
     </div>
 
-    <div id="detalleAlergiaContainer" class="hidden">
-      <label for="detalleAlergia">Por favor indica a qué eres alérgico/a</label>
-      <input type="text" name="detalleAlergia" id="detalleAlergia" placeholder="Ej: Maní, gluten, etc." />
-    </div>
+    <!-- Si selecciona "No" -->
+    <div id="formNoAsiste" class="hidden">
+      <label for="nombreNo">Nombre</label>
+      <input type="text" name="nombreNo" id="nombreNo" required />
 
-    <label>Si fuiste invitado/a con acompañante, por favor completar los datos del mismo haciendo click en el siguiente botón:</label>
-    <button type="button" class="btn-small btn-add" onclick="mostrarSeccionAcompanantes()">Agregar acompañante</button>
-
-    <div id="acompanantesContainer" class="hidden">
-      <div id="acompanantes" class="acompanantes"></div>
+      <label for="apellidoNo">Apellido</label>
+      <input type="text" name="apellidoNo" id="apellidoNo" required />
     </div>
 
     <button type="submit" class="btn-submit">Enviar</button>
