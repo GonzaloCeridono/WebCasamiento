@@ -46,6 +46,7 @@
 
 /* Botón de ingreso */
 #btnIngresar {
+  display: flex;
   width: fit-content;
   background-color: var(--color-celeste);
   color: var(--color-negro);
@@ -75,6 +76,25 @@
 /* ======================== */
 /*        RESPONSIVE        */
 /* ======================== */
+
+@media (max-width: 1024px) {
+  .pantalla-ingreso {
+    padding: 0.5rem;
+  }
+
+  #btnIngresar {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .imagen-portada {
+    max-width: 90%;
+  }
+
+  .imagen-portada-vertical {
+    max-width: 90%;
+  }
+}
 
 @media (max-width: 768px) {
   .imagen-portada {
