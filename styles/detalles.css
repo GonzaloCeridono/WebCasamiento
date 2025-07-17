@@ -5,8 +5,10 @@
   margin: 0 auto;
 }
 
-.detalles header h2 {
+.detalles h2 {
   text-align: center;
+  justify-content: center;
+  display: flex;
   font-family: 'Breathing', sans-serif;
   font-size: 4rem;
   line-height: 80px;
@@ -14,6 +16,10 @@
   color: #456344;
   margin-bottom: 2rem;
   letter-spacing: 2px;
+  border-bottom: 2px solid #456344;
+  padding-bottom: 0.5rem;
+  width: fit-content;
+  
 }
 
 /* Contenedor de los detalles */

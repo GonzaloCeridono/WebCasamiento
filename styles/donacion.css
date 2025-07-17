@@ -18,6 +18,9 @@
   color: var(--color-verde, #456344);
   margin-bottom: 0.5rem;
   font-weight: 500;
+  border-bottom: 2px solid #456344;
+  padding-bottom: 0.5rem;
+  width: fit-content;
 }
 
 .donacion-subtitulo {
