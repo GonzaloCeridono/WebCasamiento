@@ -164,7 +164,7 @@
     padding: 2rem 0;
   }
 
-  .detalles header h2 {
+  .detalles h2 {
     font-size: 3rem;
   }
 
@@ -197,7 +197,7 @@
 }
 
 @media (max-width: 480px) {
-  .detalles header h2 {
+  .detalles h2 {
     font-size: 2rem;
   }
 
@@ -273,7 +273,7 @@
 }
 
 @media (max-width: 360px) {
-  .detalles header h2 {
+  .detalles h2 {
     font-size: 2rem;
     line-height: 60px;
   }
