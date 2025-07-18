@@ -14,7 +14,7 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
   padding: 1rem;
@@ -88,11 +88,11 @@
   }
 
   .imagen-portada {
-    max-width: 90%;
+    max-width: 60vh;
   }
 
   .imagen-portada-vertical {
-    max-width: 90%;
+    max-width: 60vh;
   }
 }
 

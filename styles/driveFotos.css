@@ -50,11 +50,14 @@
 #driveFotosTitulo {
   font-family: 'Breathing', sans-serif;
   font-size: 4rem;
-  color: var(--color-verde);
-  margin: 0;
-  padding-bottom: 1rem;
-  font-weight: normal;
-  line-height: 90px;
+  color: var(--color-verde, #456344);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  border-bottom: 2px solid #456344;
+  padding-bottom: 0.5rem;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
