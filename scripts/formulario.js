@@ -104,6 +104,8 @@ function agregarAcompanante() {
       <input type="text" name="acompanantes[${index}][detalleAlergia]" placeholder="Ej: Maní, gluten, etc." />
     </div>
     <button type="button" class="btn-small" onclick="this.parentElement.remove()">Eliminar</button>
+    <p class="info-msg-acomp">Si necesitás agregar otro acompañante, hacé click nuevamente en el botón "Agregar Acompañante".</p>
+
   `;
   acompanantesDiv.appendChild(div);
   index++;

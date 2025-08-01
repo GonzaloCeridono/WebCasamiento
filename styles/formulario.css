@@ -131,6 +131,15 @@
     font-style: italic;
 }
 
+.info-msg-acomp {
+    font-size: 0.95rem;
+    color: var(--color-blanco);
+    text-align: left;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
 /* Elementos ocultos */
 .hidden {
     display: none;
